@@ -18,10 +18,15 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
+          //bao quát tất cả
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Stack(
+            //bao quát tất cả
             children: <Widget>[
+              //bao quát tất cả
+
+              //1.ảnh đầu
               Container(
                 height: MediaQuery.of(context).size.height / 3 + 20,
                 width: MediaQuery.of(context).size.width,
@@ -40,6 +45,8 @@ class DetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
+              //2 cái > điều hướng
               Positioned(
                 top: 40,
                 left: 20,
@@ -53,18 +60,25 @@ class DetailScreen extends StatelessWidget {
                   },
                 ),
               ),
+
+              //3 màu trắng ở dưới
               Positioned(
                 top: MediaQuery.of(context).size.height / 3 - 30,
                 child: Container(
+                  //tất cả phần màu trắng ở dưới
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
+
                   decoration: BoxDecoration(
+                    //bo tron goc tren
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
                     ),
                   ),
+
                   child: Padding(
+                    //cac thanh phan mau trang o duoi
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,20 +185,29 @@ class DetailScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
+              //4 phần giữa ảnh đầu và phần trắng
               Positioned(
                 top: MediaQuery.of(context).size.height / 3 - 110,
                 child: Padding(
+                  // phần giữa ảnh đầu và phần trắng
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Row(
+                    // phần giữa ảnh đầu và phần trắng
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Container(
+                        //hình chữ nhật góc trái và thợ
+
                         width: MediaQuery.of(context).size.width / 3 - 20,
                         height: MediaQuery.of(context).size.height / 6 + 20,
+                        //hình chữ nhật góc trái
                         decoration: BoxDecoration(
                           color: stylist['bgColor'],
                           borderRadius: BorderRadius.circular(20),
                         ),
+
+                        //thợ
                         child: Stack(
                           fit: StackFit.expand,
                           children: <Widget>[
@@ -193,7 +216,7 @@ class DetailScreen extends StatelessWidget {
                               right: -75,
                               height: 160,
                               child: Image.asset(
-                                stylist['imgUrl'],
+                                stylist['imgUrl'], //ảnh
                                 scale: 4.5,
                               ),
                             ),
@@ -207,7 +230,7 @@ class DetailScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            stylist['stylistName'],
+                            stylist['stylistName'], //tên stylist
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -217,7 +240,7 @@ class DetailScreen extends StatelessWidget {
                             height: 1.5,
                           ),
                           Text(
-                            stylist['salonName'],
+                            stylist['salonName'], //tên salon
                             style: TextStyle(
                               fontWeight: FontWeight.w300,
                               color: Colors.grey,
